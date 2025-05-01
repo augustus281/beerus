@@ -26,3 +26,5 @@ go.work.sum
 
 dist/
 grpc_api_gateway_proto.tar.gz
+
+.idea
