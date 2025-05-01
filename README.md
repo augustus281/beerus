@@ -9,7 +9,7 @@ At its core, gRPC Gateway generates a reverse-proxy server that translates **RES
 -----
 ## Technical Architecture: How It Works
 
-![img.png](docs/architecture.png)
+![img_1.png](docs/img_1.png)
 
 --------
 ## Prerequisities
