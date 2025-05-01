@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package beerus;
+
+import "google/api/annotations.proto";
+
+option go_package = "github.com/augustus281/beerus/proto/gen/go/beerus";
+
+service UserService {
+  rpc AddUser(AddUserRequest) returns (AddUserResponse) {
+    option (google.api.http) = {
+      post: "/users"
+      body: "*"
+    };
+  }
+}
+
+message AddUserRequest {
+  string name = 1;
+}
+
+message AddUserResponse {
+  string id = 1;
+}
