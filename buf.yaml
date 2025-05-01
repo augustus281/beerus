@@ -1,0 +1,3 @@
+version: v1
+deps:
+  - "buf.build/beerus/grpc-api-gateway"
