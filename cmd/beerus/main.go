@@ -9,7 +9,6 @@ import (
 
 	ws "github.com/gorilla/websocket"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
-	"github.com/meshapi/grpc-api-gateway/gateway"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/reflection"
@@ -28,7 +27,6 @@ func main() {
 
 	server := grpc.NewServer()
 	beerus.RegisterUserServiceServer(server, &service.UserService{})
-	beerus.RegisterChatServiceServer(server, service.NewChatService())
 	reflection.Register(server)
 
 	connection, err := grpc.NewClient(":40000", grpc.WithTransportCredentials(insecure.NewCredentials()))
