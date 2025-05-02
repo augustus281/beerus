@@ -129,7 +129,6 @@ var File_beerus_chat_service_proto protoreflect.FileDescriptor
 
 const file_beerus_chat_service_proto_rawDesc = "" +
 	"\n" +
-	"\x19beerus/chat_service.proto\x12\x06beerus\"5\n" +
 	"\vChatRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n" +
 	"\x04text\x18\x02 \x01(\tR\x04text\"6\n" +
