@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package beerus;
+
+option go_package = "github.com/augustus281/beerus/proto/gen/go/beerus";
+
+service ChatService {
+  rpc Chat(stream ChatRequest) returns (stream ChatResponse);
+}
+
+message ChatRequest {
+  string name = 1;
+  string text = 2;
+}
+
+message ChatResponse {
+  string user = 1;
+  string text = 2;
+}
