@@ -1,0 +1,24 @@
+name: Slack Notification on PR Events
+
+on:
+  pull_request:
+    types:
+      - opened
+      - closed
+
+jobs:
+  slack-notification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Slack notification
+        if: github.event.pull_request.merged == true || github.event.action == 'opened'
+        uses: rtCamp/action-slack-notify@v2
+        with:
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          text: |
+            PR **${{ github.event.pull_request.title }}** by **${{ github.actor }}** 
+            has been **${{ github.event.action }}**.
+            URL: ${{ github.event.pull_request.html_url }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

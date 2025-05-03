@@ -28,3 +28,5 @@ dist/
 grpc_api_gateway_proto.tar.gz
 
 .idea
+
+secrets
